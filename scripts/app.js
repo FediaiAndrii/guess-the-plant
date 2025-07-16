@@ -166,7 +166,7 @@ const resetMods = function () {
 };
 
 const resetPlantCard = function () {
-  guessPlant.src = "assets/icons/questtion-mark.svg";
+  guessPlant.src = "assets/icons/question-mark.svg";
   plantCard.style.background = "#A98467";
   guessPlant.style.width = "100px";
   plantCard.disabled = false;
