@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/queries.css" />
+    <title>Guess The Plant</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="main-header">Guess The Plant!</h1>
+      <button class="btn btn-primary again">Try Again</button>
+      <section class="top-info-container">
+        <div class="top-left-container">
+          <div class="counter-container">
+            <h2 class="label-round">Round: <span class="round-counter">0</span></h2>
+            <h2 class="label-points">Points: <span class="points-counter">100</span></h2>
+          </div>
+        </div>
+        <div class="start-message">
+          <img class="arrow" src="assets/icons/arrow down left.svg" alt="arrow down left" />
+          <h2 class="click-message">Click here to Start</h2>
+        </div>
+      </section>
+      <button class="plant-card">
+        <img class="guess-plant" src="assets/icons/questtion mark.svg" alt="question mark" />
+      </button>
+      <button class="btn show-hint">
+        <svg class="hint-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+          <path
+            fill="currentColor"
+            d="M6.813 2.406L5.405 3.812L7.5 5.906L8.906 4.5L6.812 2.406zm18.375 0L23.093 4.5L24.5 5.906l2.094-2.093l-1.407-1.407zM16 3.03c-.33.004-.664.023-1 .064c-.01 0-.02-.002-.03 0c-4.056.465-7.284 3.742-7.845 7.78c-.448 3.25.892 6.197 3.125 8.095a5.238 5.238 0 0 1 1.75 3.03v6h2.28c.348.597.983 1 1.72 1s1.372-.403 1.72-1H20v-4h.094v-1.188c0-1.466.762-2.944 2-4.093C23.75 17.06 25 14.705 25 12c0-4.94-4.066-9.016-9-8.97zm0 2c3.865-.054 7 3.11 7 6.97c0 2.094-.97 3.938-2.313 5.28l.032.032A7.792 7.792 0 0 0 18.279 22h-4.374c-.22-1.714-.955-3.373-2.344-4.563c-1.767-1.5-2.82-3.76-2.468-6.312c.437-3.15 2.993-5.683 6.125-6.03a6.91 6.91 0 0 1 .78-.064zM2 12v2h3v-2H2zm25 0v2h3v-2h-3zM7.5 20.094l-2.094 2.093l1.407 1.407L8.905 21.5L7.5 20.094zm17 0L23.094 21.5l2.093 2.094l1.407-1.407l-2.094-2.093zM14 24h4v2h-4v-2z"
+          />
+        </svg>
+      </button>
+      <section class="modal-hint hidden">
+        <button class="close-hint">&times;</button>
+        <h2 class="modal-header">Plant names in the game</h2>
+        <ul class="plant-names-list"></ul>
+      </section>
+      <section class="modal-warning hidden">
+        <button class="close-warning">&times;</button>
+        <div class="warning-buttons">
+          <button class="btn btn-secondary accept-warning">Okey</button>
+          <button class="btn btn-secondary cancel-warning">Cancel</button>
+        </div>
+        <h3 class="modal-header">WARNING!</h3>
+        <p class="modal-paragraph">
+          Activating a hint in <span class="hard-highlight">Hard</span> Mode will increase the penalty for incorrect
+          answers from <strong>1</strong> to <strong>5</strong> points for this round.
+        </p>
+      </section>
+    </header>
+    <main>
+      <button class="btn btn-secondary show-info">Info</button>
+      <section class="left">
+        <div class="mods-container">
+          <button class="btn btn-secondary btn-easy">Easy</button>
+          <button class="btn btn-secondary btn-medium">Medium</button>
+          <button class="btn btn-secondary btn-hard">Hard</button>
+        </div>
+        <section class="answer-container">
+          <div class="mode-message-container">
+            <div class="arrow-message-container">
+              <img class="easy-message arrow" src="assets/icons/arrow up left.svg" alt="arrow to easy mode" />
+              <img class="medium-message arrow" src="assets/icons/arrow up.svg" alt="arrow to medium mode" />
+              <img class="hard-message arrow" src="assets/icons/arrow up right.svg" alt="arrow to hard mode" />
+            </div>
+            <h2 class="mods-message">Select the mode</h2>
+          </div>
+          <div class="easy-mode hidden">
+            <button class="btn btn-primary answer-easy">Answer</button>
+            <button class="btn btn-primary answer-easy">Answer</button>
+            <button class="btn btn-primary answer-easy">Answer</button>
+            <button class="btn btn-primary answer-easy">Answer</button>
+          </div>
+          <div class="medium-mode hidden">
+            <div class="scroll-message">
+              <img class="arrow" src="assets/icons/arrow left.svg" alt="arrow left" />
+              <h3>Scroll it :D</h3>
+            </div>
+            <div class="medium-answers">
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+              <button class="btn btn-primary answer-medium">Answer</button>
+            </div>
+          </div>
+          <div class="hard-mode hidden">
+            <input class="hard-guess" type="text" placeholder="aloe vera..." />
+            <button class="btn btn-primary answer-hard">Check</button>
+          </div>
+        </section>
+      </section>
+      <section class="right">
+        <h2 class="label-answer">Answer: <span class="answer-message"></span></h2>
+        <h2 class="label-best-try">Best try: <span class="best-try">0</span> rounds</h2>
+        <h2 class="label-total-points">
+          Total score: <span class="total-points">0</span> <span class="unit">points</span>
+        </h2>
+      </section>
+    </main>
+    <section class="congratulation-container hidden">
+      <div id="congratulationAnimation" class="congrats-animation"></div>
+      <div id="balloonsAnimation" class="balloons-animation"></div>
+    </section>
+    <section class="modal-info hidden">
+      <button class="close-info">&times;</button>
+      <h3 class="modal-header">Information about modes</h3>
+      <p class="modal-paragraph">
+        <span class="easy-highlight">Easy</span> Mode<br />You get 4 answer options. Each wrong answer deducts 25
+        points.
+      </p>
+      <p class="modal-paragraph">
+        <span class="medium-highlight">Medium</span> Mode<br />You get 10 answer options. Each wrong answer deducts 10
+        points.
+      </p>
+      <p class="modal-paragraph">
+        <span class="hard-highlight">Hard</span> Mode<br />You must type the plant's name yourself. Each wrong answer
+        deducts 1 point. If you use a hint, each wrong answer in that round deducts 5 points instead.
+      </p>
+      <hr />
+      <p class="modal-paragraph">
+        After each round, your score adds to your highscore. Try to reach
+        <strong>1000</strong>
+        points in as few rounds as possible!
+      </p>
+    </section>
+    <div class="overlay hidden"></div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="scripts/plants.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
