@@ -206,7 +206,7 @@ main {
   background: linear-gradient(to bottom, rgba(169, 132, 103, 0.9), transparent);
   mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -220,7 +220,7 @@ main {
   background: linear-gradient(to top, rgba(169, 132, 103, 0.9), transparent);
   mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -324,14 +324,14 @@ hr {
   position: absolute;
   top: 5%;
   right: 2rem;
-  z-index: 15;
+  z-index: 20;
 }
 
 .show-hint {
   position: absolute;
   bottom: 5%;
   left: 2rem;
-  z-index: 4;
+  z-index: 10;
 }
 
 .counter-container {
@@ -508,7 +508,7 @@ hr {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 5;
+  z-index: 15;
 }
 
 .modal-header {
@@ -545,7 +545,7 @@ hr {
   background-color: var(--tertiary-tint);
   box-shadow: 0px 1rem 2rem var(--primary-base);
   overflow: hidden;
-  z-index: 10;
+  z-index: 25;
 }
 
 .close-hint {
@@ -601,7 +601,7 @@ hr {
   background-color: var(--tertiary-tint);
   box-shadow: 0px 1rem 2rem var(--primary-base);
   overflow: hidden;
-  z-index: 5;
+  z-index: 30;
 }
 
 .close-warning {
@@ -634,7 +634,6 @@ hr {
 }
 
 /* CONGRATULATION ANIMATION */
-
 .congratulation-container {
   position: absolute;
   top: 50%;
@@ -643,7 +642,7 @@ hr {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 20;
+  z-index: 50;
   opacity: 1;
   transition: opacity 1s ease-out;
 }
@@ -671,8 +670,8 @@ hr {
 }
 
 .balloons-animation {
-  z-index: 19;
+  z-index: 49;
 }
 .congrats-animation {
-  z-index: 18;
+  z-index: 48;
 }
